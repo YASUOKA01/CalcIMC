@@ -2,7 +2,6 @@ export default function InputForm({ peso, setPeso, altura, setAltura, onCalcular
   return (
     <div className="bg-blue-800/80 backdrop-blur-md shadow-lg rounded-2xl p-6 w-80 space-y-4">
 
-      {/* Input de Peso */}
       <div className="relative">
         <label htmlFor="peso" className="sr-only">Peso</label>
         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">kg</span>
@@ -19,7 +18,6 @@ export default function InputForm({ peso, setPeso, altura, setAltura, onCalcular
         />
       </div>
 
-      {/* Input de Altura */}
       <div className="relative">
         <label htmlFor="altura" className="sr-only">Altura</label>
         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">m</span>
@@ -36,7 +34,6 @@ export default function InputForm({ peso, setPeso, altura, setAltura, onCalcular
         />
       </div>
 
-      {/* Botão de Calcular */}
       <button
         type="button"
         onClick={onCalcular}
