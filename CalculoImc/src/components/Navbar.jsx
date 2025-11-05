@@ -9,7 +9,7 @@ export default function Navbar() {
     const confirmLogout = confirm("Tem certeza que deseja sair?");
     if (confirmLogout) {
       logout();
-      navigate("/"); // ou use: window.location.href = "http://localhost:5176/";
+      navigate("/"); 
     }
   };
 
@@ -34,4 +34,3 @@ export default function Navbar() {
     </nav>
   );
 }
-    

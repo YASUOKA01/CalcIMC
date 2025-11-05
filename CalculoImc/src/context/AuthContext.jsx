@@ -6,7 +6,6 @@
     const [users, setUsers] = useState([]);
     const [currentUser, setCurrentUser] = useState(null);
 
-    // carregar do localStorage
     useEffect(() => {
         const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
         setUsers(storedUsers);
@@ -15,7 +14,6 @@
         if (loggedUser) setCurrentUser(loggedUser);
     }, []);
 
-    // login simples
     function login(email, password) {
         const user = users.find(
         (u) => u.email === email && u.password === password
@@ -28,7 +26,6 @@
         return false;
     }
 
-    // registrar
     function register(email, password) {
         const exists = users.some((u) => u.email === email);
         if (exists) return false;
@@ -38,7 +35,6 @@
         return true;
     }
 
-    // logout
     function logout() {
         setCurrentUser(null);
         localStorage.removeItem("user");

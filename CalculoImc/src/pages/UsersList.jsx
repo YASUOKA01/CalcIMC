@@ -11,11 +11,11 @@ export default function UsersList() {
       setUsers(updatedUsers);
       localStorage.setItem("users", JSON.stringify(updatedUsers));
 
-      // 🟡 Se o usuário apagar a própria conta:
+    
       if (currentUser && currentUser.email === email) {
         alert("Sua conta foi excluída. Você será redirecionado para o login.");
         logout();
-        navigate("/login"); // redireciona automaticamente
+        navigate("/login"); 
       }
     }
   };
