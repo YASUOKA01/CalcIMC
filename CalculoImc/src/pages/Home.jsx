@@ -1,4 +1,17 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Home() {
+  const navigate = useNavigate();
+
+  function handleNavigate() {
+    const user = localStorage.getItem("user");
+    if (user) {
+      navigate("/imc"); // se estiver logado, vai direto pra calculadora
+    } else {
+      navigate("/login"); // se não estiver logado, vai pra tela de login
+    }
+  }
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-900 via-blue-950 to-black text-center px-6 py-10 space-y-10 text-gray-100">
       
@@ -61,12 +74,12 @@ export default function Home() {
         <p className="text-gray-200 mb-4">
           Vá para a calculadora de IMC e dê o primeiro passo rumo à sua melhor versão!
         </p>
-        <a
-          href="/imc"
+        <button
+          onClick={handleNavigate}
           className="inline-block bg-yellow-400 text-blue-900 font-semibold px-6 py-3 rounded-full hover:bg-yellow-300 transition"
         >
           Calcular meu IMC
-        </a>
+        </button>
       </section>
 
       <footer className="text-sm text-gray-400 mt-8 max-w-2xl text-center">
