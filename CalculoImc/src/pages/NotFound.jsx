@@ -2,10 +2,15 @@ import { Link } from "react-router-dom";
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-center">
-      <h2 className="text-5xl font-bold text-red-600 mb-4">404</h2>
-      <p className="text-lg mb-4">Página não encontrada!</p>
-      <Link to="/" className="text-blue-600 hover:underline">Voltar para Home</Link>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-blue-900 text-yellow-400 text-center p-8">
+      <h1 className="text-6xl font-bold mb-4">404</h1>
+      <p className="text-2xl mb-6">Página não encontrada 😢</p>
+      <Link
+        to="/"
+        className="bg-yellow-400 text-blue-900 px-4 py-2 rounded-md font-semibold hover:bg-yellow-300 shadow-md transition-transform hover:scale-105"
+      >
+        Voltar para Home
+      </Link>
     </div>
   );
 }

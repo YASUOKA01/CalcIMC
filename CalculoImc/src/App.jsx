@@ -5,28 +5,19 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import IMC from "./pages/IMC";
 import UsersList from "./pages/UsersList";
-import { useAuth } from "./context/AuthContext";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
-  const { currentUser } = useAuth();
-
   return (
     <Router>
-      {currentUser && <Navbar />} {/* Navbar só aparece se logado */}
-
+      <Navbar />
       <Routes>
-        {!currentUser ? (
-          <>
-            <Route path="/" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </>
-        ) : (
-          <>
-            <Route path="/" element={<Home />} />
-            <Route path="/imc" element={<IMC />} />
-            <Route path="/userslist" element={<UsersList />} />
-          </>
-        )}
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/imc" element={<IMC />} />
+        <Route path="/userslist" element={<UsersList />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
